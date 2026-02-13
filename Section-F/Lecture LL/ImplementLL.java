@@ -15,61 +15,80 @@ Node head;
 
 void display()
 {
-Node temp =  head;
-
-        while(temp !=null)
-        {
-            System.out.print(temp.data + ">> ");
-            temp = temp.next;
-        }
+    Node temp =  head ;
+    while(temp!=null)
+    {
+        System.out.println(temp.data  + ">> ");
+        temp =  temp.next;
+    }
 }
-
 void insertAtHead(int data)
 {
-    Node newnode = new Node(data);
-
-    if(head == null)
+    Node newnode =  new Node(data);
+    if(head ==  null)
     {
-        head = newnode;
-        return ;
+        head =  newnode;
+        return;
     }
-newnode.next = head;
-head =  newnode;
+    newnode.next  = head;
+    head =  newnode;
 
 }
 
 void insertAtTail(int data)
 {
-    Node newnode =  new Node(data);
-
-    Node temp = head ;
-
-    while(temp.next != null)
-    {
+    Node newnode = new Node(data);
+    if(head==null) {
+        head = newnode;
+        return;
+    }
+    Node temp = head;
+    while (temp.next!= null) {
         temp = temp.next;
     }
-    temp.next =  newnode;
+    temp.next= newnode;
 }
 
+void deleteAtHead()
+{
 
-
-
-
-
-
-
-
-
-
-
-
+if(head==null){
+    System.out.println("list is empty");
+    return;
+}
+head=head.next;
 
 
 }
 
+void deleteAtTail()
+{
+if(head  == null)
+{
+    System.out.println("List is Empty");
+    return ;
+}
+
+if(head.next == null)
+{
+    head =  null;
+    return ;
+}
+Node temp =  head;
+
+
+while(temp.next.next!=null)
+{
+    temp = temp.next;
+}
+// 10 20 30 40 
+
+temp.next =  null;
 
 
 
+}
+}
 
 
 public class ImplementLL {
