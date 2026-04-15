@@ -15,6 +15,7 @@ class Node
 class Linkedlist
 {
 Node head ;
+int length =0;
 void display(){
     Node temp = head;
     while(temp != null ){
@@ -81,6 +82,11 @@ void deleteAtTail()
 
     }
     temp.next = null;
+
+}
+int lengthoff()
+{
+    return length;
 
 }
 
